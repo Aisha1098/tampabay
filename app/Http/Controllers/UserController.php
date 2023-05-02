@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function index(){
-        return Event::get();
+        return Event::first();
     }
 
     public function store(){
