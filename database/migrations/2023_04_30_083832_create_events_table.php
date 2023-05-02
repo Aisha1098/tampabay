@@ -16,12 +16,10 @@ return new class extends Migration
             $table->unsignedInteger('group_id');
             $table->unsignedInteger('location_id');
             $table->string('name');
-            $table->text('text');
+            $table->text('desc');
             $table->date('date');
+            $table->time('time');
             $table->timestamps();
-
-            $table->foreign('location_id')->references('id')->on('locations')->onDelete('cascade');
-            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
         });
     }
 

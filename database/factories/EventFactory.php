@@ -19,15 +19,16 @@ class EventFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->sentence(3),
+            'name' => fake()->sentence(),
             'group_id' => function(){
                 return Group::factory()->create()->id;
             },
-            'desc' => fake()->sentences(3),
-            'location' => function(){
+            'desc' => fake()->paragraph(),
+            'location_id' => function(){
                 return Location::factory()->create()->id;
             },
-            'date' => fake()->time(),
+            'date' => fake()->date(),
+            'time' => fake()->time()
         ];
     }
 }

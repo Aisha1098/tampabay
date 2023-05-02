@@ -10,9 +10,7 @@ use Illuminate\Validation\Rule;
 class GroupController extends Controller
 {
     public function index(){
-        return [
-            'groups' =>Group::all()
-        ];
+        return Group::get();
     }
 
     public function store(){

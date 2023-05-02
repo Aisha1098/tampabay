@@ -17,9 +17,6 @@ return new class extends Migration
             $table->unsignedInteger('user_id');
             $table->text('message');
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
         });
     }
 

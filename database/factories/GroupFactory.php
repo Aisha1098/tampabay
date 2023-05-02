@@ -17,10 +17,9 @@ class GroupFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->words(3),
-            'desc' => fake()->sentences(3),
-            'is_slack' => fake()->boolean()
-
+            'name' => fake()->sentence(),
+            'desc' => fake()->paragraph(),
+            'is_slack' => fake()->boolean(false)
         ];
     }
 }
