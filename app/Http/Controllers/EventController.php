@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class EventController extends Controller
 {
     public function index(){
-        return Event::get();
+        return Event::orderBy('date', 'asc')->get();
     }
 
 }

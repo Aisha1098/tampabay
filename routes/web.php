@@ -23,12 +23,12 @@ Route::get('/', [UserController::class, 'index'])->name('home');
 Route::get('groups', [GroupController::class, 'index']);
 Route::post('groups/store', [UserController::class, 'store']);
 Route::post('groups/{group:id}/update', [UserController::class, 'update']);
-Route::post('groups/{group:id}/delete', [UserController::class, 'delete']);
+Route::get('groups/{group:id}/delete', [UserController::class, 'delete']);
 
 Route::get('events', [EventController::class, 'index']);
 Route::post('events/store', [GroupController::class, 'store']);
 Route::post('events/{event:id}/update', [GroupController::class, 'update']);
-Route::post('events/{event:id}/delete', [GroupController::class, 'delete']);
+Route::get('events/{event:id}/delete', [GroupController::class, 'delete']);
 
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
@@ -36,4 +36,4 @@ Route::post('register', [RegisterController::class, 'store'])->middleware('guest
 Route::get('login', [SessionController::class, 'create'])->middleware('guest');
 Route::post('login', [SessionController::class, 'store'])->middleware('guest');
 
-Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth');
+Route::get('logout', [SessionController::class, 'destroy'])->middleware('auth');
