@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('name');
             $table->text('desc');
             $table->string('icon');
-            $table->timestamps();
         });
     }
 

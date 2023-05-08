@@ -14,11 +14,10 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->boolean('is_featured')->default(false);
-            $table->timestamp('started_at');
+            $table->timestamp('start_at');
             $table->string('name');
             $table->text('desc');
-            $table->text('location');
-            $table->timestamps();
+            $table->string('location');
         });
     }
 

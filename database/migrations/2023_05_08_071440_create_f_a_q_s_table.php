@@ -16,7 +16,6 @@ return new class extends Migration
             $table->boolean('active')->default(true);
             $table->text('question');
             $table->text('answer');
-            $table->timestamps();
         });
     }
 
