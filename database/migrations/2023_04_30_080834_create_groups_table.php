@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('groups', function (Blueprint $table) {
             $table->id();
+            $table->boolean('is_slack');
+            $table->boolean('is_credit');
             $table->string('name');
             $table->text('desc');
-            $table->boolean('is_slack');
+            $table->string('icon');
             $table->timestamps();
         });
     }

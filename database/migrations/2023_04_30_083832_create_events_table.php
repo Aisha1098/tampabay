@@ -13,12 +13,11 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('group_id');
-            $table->unsignedInteger('location_id');
+            $table->boolean('is_featured');
+            $table->timestamp('started_at')->useCurrent();
             $table->string('name');
             $table->text('desc');
-            $table->date('date');
-            $table->time('time');
+            $table->text('location');
             $table->timestamps();
         });
     }

@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Location>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\FAQ>
  */
-class LocationFactory extends Factory
+class FAQFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,9 +17,9 @@ class LocationFactory extends Factory
     public function definition(): array
     {
         return [
-            'building_name' => fake()->buildingNumber(),
-            'street_name' =>fake()->streetAddress(),
-            'map_url' => fake()->url()
+            'active' => fake()->boolean(true),
+            'question' => fake()->sentence(),
+            'answer' => fake()->paragraph()
         ];
     }
 }

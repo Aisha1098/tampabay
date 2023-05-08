@@ -10,14 +10,10 @@ class Event extends Model
     use HasFactory;
 
     public function host(){
-        return $this->belongsTo(Group::class);
+        return $this->belongsToMany(Group::class);
     }
 
-    public function attendees(){
-        return $this->hasMany(User::class);
-    }
-
-    public function held(){
-        return $this->belongsTo(Location::class);
+    public function faq(){
+        return $this->hasMany(FAQ::class);
     }
 }

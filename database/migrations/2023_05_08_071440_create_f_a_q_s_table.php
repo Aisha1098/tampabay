@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('group_history', function (Blueprint $table) {
-            $table->primary(['group_id','user_id']);
-            $table->unsignedInteger('group_id');
-            $table->unsignedInteger('user_id');
-            $table->text('message');
+        Schema::create('f_a_q_s', function (Blueprint $table) {
+            $table->id();
+            $table->boolean('active');
+            $table->text('question');
+            $table->text('answer');
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('f_a_q_s');
     }
 };

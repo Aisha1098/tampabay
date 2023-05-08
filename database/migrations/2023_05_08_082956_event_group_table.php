@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('locations', function (Blueprint $table) {
-            $table->id();
-            $table->string('building_name');
-            $table->string('street_name');
-            $table->string('map_url');
-            $table->timestamps();
+        Schema::create('event_group', function(Blueprint $table){
+            $table->primary(['group_id','event_id']);
+            $table->foreignId('group_id')->references('id')->on('groups');
+            $table->foreignId('event_id')->references('id')->on('events');
         });
     }
 
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('locations');
+        //
     }
 };

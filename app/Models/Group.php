@@ -9,11 +9,8 @@ class Group extends Model
 {
     use HasFactory;
 
-    public function members(){
-        return $this->hasMany(User::class);
-    }
-
     public function events(){
         return $this->hasMany(Event::class);
     }
+    
 }

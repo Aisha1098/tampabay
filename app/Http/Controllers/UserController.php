@@ -9,35 +9,12 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function index(){
-        return Event::orderBy('date', 'asc')->first();
+        $events = Event::OrderBy('started_at', 'DESC')->where('is_featured', true)->get();
+        return $events;
     }
 
-    public function store(){
-        Group::create(array_merge($this->validateGroup(),[
-        ]));
-    }
-
-    public function update(Group $group){
-        $attributes = $this->validateGroup($group);
-
-        $group->update($attributes);
-
-        return back();
-    }
-
-    public function delete (Group $group){
-        $group->delete();
-
-        return back();
-    }
-
-    protected function validateGroup(?Group $group = null): array {
-        $event ??= new Group();
-
-        return request()->validate([
-            'name' => 'required',
-            'desc' => 'required|min=20|max=225',
-            'is_slack' => 'required',
-        ]);
+    public function about(){
+        $credits = Group::where('is_credit', true)->get();
+        return $credits;
     }
 }
