@@ -10,6 +10,6 @@ class Faq extends Model
     use HasFactory;
 
     public function events(){
-        return $this->belongsToMany(Event::class);
+        return $this->belongsTo(Event::class);
     }
 }

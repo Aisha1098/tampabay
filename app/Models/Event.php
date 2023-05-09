@@ -9,7 +9,7 @@ class Event extends Model
 {
     use HasFactory;
 
-    public function host(){
+    public function groups(){
         return $this->belongsToMany(Group::class);
     }
 

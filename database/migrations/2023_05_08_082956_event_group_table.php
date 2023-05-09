@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('event_group', function(Blueprint $table){
             $table->primary(['group_id','event_id']);
-            $table->foreignId('group_id')->constrained();
-            $table->foreignId('event_id')->constrained();
+            $table->foreignId('group_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('event_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

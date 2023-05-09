@@ -10,7 +10,7 @@ class Group extends Model
     use HasFactory;
 
     public function events(){
-        return $this->hasMany(Event::class);
+        return $this->belongsToMany(Event::class);
     }
     
 }
