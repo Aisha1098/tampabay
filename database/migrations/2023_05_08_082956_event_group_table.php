@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('event_group', function(Blueprint $table){
             $table->primary(['group_id','event_id']);
-            $table->foreignId('group_id')->references('id')->on('groups');
-            $table->foreignId('event_id')->references('id')->on('events');
+            $table->foreignId('group_id')->constrained();
+            $table->foreignId('event_id')->constrained();
         });
     }
 

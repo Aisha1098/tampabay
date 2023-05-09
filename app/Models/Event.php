@@ -14,6 +14,6 @@ class Event extends Model
     }
 
     public function faq(){
-        return $this->hasMany(FAQ::class);
+        return $this->hasMany(Faq::class);
     }
 }
