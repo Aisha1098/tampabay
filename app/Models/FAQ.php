@@ -9,7 +9,17 @@ class Faq extends Model
 {
     use HasFactory;
 
-    public function events(){
+    public $timestamps = false;
+
+    protected $fillable = [
+        'event_id',
+        'active',
+        'question',
+        'answer',
+    ];
+
+    public function events()
+    {
         return $this->belongsTo(Event::class);
     }
 }

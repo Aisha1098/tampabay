@@ -9,8 +9,18 @@ class Group extends Model
 {
     use HasFactory;
 
-    public function events(){
+    public $timestamps = false;
+
+    protected $fillable = [
+        'is_slack',
+        'is_credit',
+        'name',
+        'desc',
+        'icon',
+    ];
+
+    public function events()
+    {
         return $this->belongsToMany(Event::class);
     }
-    
 }

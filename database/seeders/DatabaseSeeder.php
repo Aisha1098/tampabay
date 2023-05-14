@@ -3,10 +3,6 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Event;
-use App\Models\FAQ;
-use App\Models\Group;
-use App\Models\Location;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -23,6 +19,6 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        
+
     }
 }
