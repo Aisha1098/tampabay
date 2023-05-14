@@ -11,8 +11,8 @@ class EventController extends Controller
 {
     public function index(Request $request)
     {
-        $query = Event::query();
-        // dd($request->has('hangout'));
+        $query = Event::query()
+                        ->with(['groups:icon,name']);
         $events = $request->has('hangout') ? $query->where('is_featured', 1)->get() : $query->get();
         return EventResource::collection($events);
     }

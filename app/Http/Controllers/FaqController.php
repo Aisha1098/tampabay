@@ -11,7 +11,7 @@ class FaqController extends Controller
 {
     public function index(Event $event)
     {
-        $faqs = Faq::where('active', '=', true)->get();
+        $faqs = Faq::get();
         return FaqResource::collection($faqs);
     }
     
